@@ -1,0 +1,26 @@
+<%- include('layout', { body: `
+  <section class=\"page\">
+    <h1>Genel Bakış</h1>
+    <div class=\"grid\">
+      <div class=\"card\">
+        <h3>Anahtar Göstergeler</h3>
+        <div class=\"kpi\">
+          <div><span id=\"kpiDepo\">-</span><label>Toplam Depo</label></div>
+          <div><span id=\"kpiEnRota\">-</span><label>En Maliyetli Rota</label></div>
+          <div><span id=\"kpiEnBolge\">-</span><label>En Maliyetli Bölge</label></div>
+          <div><span id=\"kpiTopSehirler\">-</span><label>En Çok İş Yapılan İlk 3 Şehir</label></div>
+        </div>
+      </div>
+      <div class=\"card\">
+        <h3>Türkiye Haritası ve Depo Pop-up</h3>
+        <div id=\"map\" class=\"map\"></div>
+      </div>
+      <div class="card">
+        <h3>İş Yapılan Şehir Dağılımı (Isı Haritası)</h3>
+        <div id="mapHeatmap" style="height: 400px; border-radius: 12px; overflow: hidden; background: transparent;"></div>
+      </div>
+      
+    </div>
+  </section>
+  <script src=\"/js/dashboard.js\"></script>
+` }) %>

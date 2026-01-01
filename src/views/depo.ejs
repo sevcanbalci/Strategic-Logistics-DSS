@@ -1,0 +1,89 @@
+<%- include('layout', { body: `
+  <section class="page depo-page">
+    <style>
+      .depo-page .card { padding: 12px; }
+      .depo-page h3 { margin-top: 0; margin-bottom: 10px; font-size: 15px; }
+      .depo-page .table th, .depo-page .table td { padding: 6px 8px; font-size: 12px; }
+      .scrollable-table { max-height: 220px; overflow-y: auto; display: block; }
+      .scrollable-table table { width: 100%; }
+      .scrollable-table thead { position: sticky; top: 0; background: #0e2338; z-index: 1; }
+      .chart-container { position: relative; height: 200px; width: 100%; }
+      
+      @media(min-width: 1200px) {
+        .col-lg-4 { grid-column: span 4 !important; }
+        .col-lg-6 { grid-column: span 6 !important; }
+      }
+    </style>
+    <h1>Depo Yönetimi</h1>
+    <div class="grid">
+      <div class="card col-lg-6">
+        <h3>Mevcut Depolar</h3>
+        <div class="scrollable-table">
+          <table class="table">
+            <thead><tr><th>ID</th><th>Depo</th><th>Şehir</th><th>Bölge</th></tr></thead>
+            <tbody id="tblDepolar"></tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="card col-lg-6">
+        <h3>En Maliyetli Rotalar</h3>
+        <div class="scrollable-table">
+          <table class="table"><thead><tr><th>Şehir</th><th>Depo</th><th>Mesafe (km)</th><th>Benzin (L)</th></tr></thead><tbody id="tblRotalar"></tbody></table>
+        </div>
+      </div>
+
+      <div class="card col-lg-4">
+        <h3>Yeni Depo İçin Uygun Konumlar (Yakıt)</h3>
+        <div class="chart-container">
+          <canvas id="chartUygun"></canvas>
+        </div>
+      </div>
+
+      <div class="card col-lg-4">
+        <h3>Bölge Bazlı Yakıt Maliyeti</h3>
+        <div class="chart-container" style="height: 300px;">
+          <canvas id="chartBolge"></canvas>
+        </div>
+      </div>
+      <div class="card col-lg-4">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <h3>İş Yapılan Şehir Dağılımı</h3>
+    <div style="display:flex; gap:5px;">
+      
+      <button id="btnToggleHeatmap" class="logout-btn" style="width:auto;padding:4px 8px;font-size:11px;">Harita</button>
+    </div>
+  </div>
+  <div class="chart-container">
+    <canvas id="chartSehirDagilimi"></canvas>
+    <div id="mapHeatmapDepo" style="display: none; height: 100%;"></div>
+  </div>
+</div>
+
+      
+        
+      </div>
+      <div class="card col-lg-4">
+        <h3>Şehirlere Göre Gelir Dağılımı</h3>
+        <div class="chart-container" style="height: 300px;">
+          <canvas id="chartSehirGelir"></canvas>
+        </div>
+      </div>
+      <div class="card">
+  <h3>Satılık Depo Piyasası</h3>
+
+  <a
+    href="https://www.hepsiemlak.com/satilik/depo"
+    target="_blank"
+    class="logout-btn"
+    style="display:inline-block;text-decoration:none;text-align:center;"
+  >
+    Hepsiemlak’ta Satılık Depoları Gör
+  </a>
+</div>
+
+    </div>
+  </section>
+  <script src=\"/js/depo.js\"></script>
+` }) %>
+

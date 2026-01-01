@@ -1,0 +1,23 @@
+<%- include('layout', { body: `
+  <section class=\"page finans-page\">
+    <h1>Finansal Genel Bakış</h1>
+    <div class=\"grid\">
+      <div class=\"card\">
+        <div class=\"filter-bar\" style=\"display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-bottom:8px\">
+          <label for=\"selectYil\" style=\"color:#a6b5c8;font-size:13px\">Yıl</label>
+          <select id=\"selectYil\" class=\"select\">
+            <option value=\"2025\">2025</option>
+            <option value=\"2024\">2024</option>
+          </select>
+        </div>
+        <div id=\"finansKpi\" class=\"kpi\" style=\"margin-bottom:12px\">
+          <div><span id=\"kpiGelir\">-</span><label>Toplam Gelir</label></div>
+          <div><span id=\"kpiGider\">-</span><label>Toplam Gider</label></div>
+          <div><span id=\"kpiKar\">-</span><label>Toplam Kâr</label></div>
+        </div>
+        <canvas id=\"chartFinans\"></canvas>
+      </div>
+    </div>
+  </section>
+  <script src=\"/js/finans.js\"></script>
+` }) %>

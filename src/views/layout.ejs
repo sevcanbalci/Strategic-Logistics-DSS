@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KDS</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="/js/layout.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">Aktif Dekor Organizasyon</div>
+    <nav>
+      <a href="/" class="nav-link">Anasayfa</a>
+      <a href="/depo-yonetimi" class="nav-link">Depo Yönetimi</a>
+      <a href="/finansal" class="nav-link">Finansal Genel Bakış</a>
+    </nav>
+    <form method="post" action="/logout" class="logout">
+      <button type="submit" class="logout-btn">Çıkış Yap</button>
+    </form>
+  </aside>
+  <main class="content">
+    <%- body %>
+  </main>
+</body>
+</html>

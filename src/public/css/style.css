@@ -1,0 +1,50 @@
+:root{--bg:#0a1627;--bg-2:#0f2035;--bg-3:#0c1a2d;--accent:#4aa0ff;--accent-2:#3ddc97;--text:#e6eef7;--muted:#a6b5c8;--card:#0f233a;--border:#17314d;--shadow:rgba(0,0,0,0.35)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;background:radial-gradient(1200px 600px at 20% -10%,#0f2a49 10%,var(--bg)),linear-gradient(180deg,var(--bg-2),var(--bg));color:var(--text)}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:256px;background:linear-gradient(180deg,var(--bg-2),var(--bg-3));padding:24px;border-right:1px solid #0f2135;box-shadow:0 0 24px var(--shadow)}
+.brand{font-weight:800;font-size:22px;margin-bottom:28px;letter-spacing:.6px;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-link{display:flex;align-items:center;gap:10px;color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px;transition:all .18s ease}
+.nav-link:hover{color:var(--text);background:#0e2338}
+.nav-link.active{color:#fff;background:#133151;border-left:3px solid var(--accent)}
+.content{margin-left:256px;padding:28px;min-height:100vh}
+.page h1{margin:0 0 16px 0;font-size:26px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{grid-column:span 12;background:linear-gradient(180deg,#102740,var(--card));border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 10px 24px var(--shadow)}
+@media(min-width:900px){.card{grid-column:span 6}}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.kpi div{background:#0e2338;border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center;box-shadow:0 4px 12px var(--shadow)}
+.kpi span{display:block;font-size:22px;font-weight:700;color:var(--accent)}
+.map{height:460px;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 24px var(--shadow)}
+.table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden}
+.table th,.table td{padding:10px;border-bottom:1px solid var(--border);color:var(--text)}
+.table th{color:var(--muted);text-align:left;background:#0e2338}
+.table tr:nth-child(even){background:#0f2136}
+.leaflet-popup-content{color:var(--text)}
+.leaflet-popup-content-wrapper{background:#0f2a49;border:1px solid var(--border);box-shadow:0 10px 24px var(--shadow)}
+.leaflet-popup-tip{background:#0f2a49;border:1px solid var(--border)}
+.popup-depo{font-size:14px;line-height:1.4}
+.popup-depo .title b{color:var(--accent);font-size:15px}
+.popup-depo .meta{color:#25446f;margin-top:2px}
+.popup-depo .loc{margin-top:8px;color:#f0f7ff;font-weight:600;background:#102a45;border:1px solid #1a3858;padding:8px 10px;border-radius:8px;word-break:break-word}
+.popup-depo .capacity{margin-top:6px;color:#0f233a;font-weight:500}
+.leaflet-tooltip.heatmap-tooltip {
+  background: #0f2a49;
+  border: 1px solid #1a3858;
+  color: #e6eef7;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: Inter, sans-serif;
+}
+.leaflet-tooltip-left.heatmap-tooltip::before { border-left-color: #0f2a49; }
+.leaflet-tooltip-right.heatmap-tooltip::before { border-right-color: #0f2a49; }
+.marker-depo{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#5bb1ff 10%,#2270cf 40%,#174a8e 90%);box-shadow:0 0 0 3px rgba(74,160,255,0.15),0 6px 16px var(--shadow);border:1px solid #1a79da}
+.logout{position:absolute;left:24px;right:24px;bottom:24px}
+.logout-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid #1a3858;background:linear-gradient(90deg,#17314d,#0f2136);color:#dce7f4;font-weight:700;cursor:pointer;transition:all .18s ease}
+.logout-btn:hover{border-color:#1a79da;color:#ffffff;background:linear-gradient(90deg,#133151,#1a3e66);box-shadow:0 8px 22px var(--shadow)}
+.logout-btn:active{transform:scale(.99)}
+.select{appearance:none;background:#0e2338;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:8px 12px;min-width:120px;outline:none;transition:border-color .18s ease, box-shadow .18s ease}
+.select:focus{border-color:#1a79da;box-shadow:0 0 0 3px rgba(74,160,255,0.15)}
+.finans-page .card{grid-column:span 12 !important}
+.finans-page .kpi div{padding:22px}
+.finans-page .kpi span{font-size:26px}
+.finans-page .kpi label{font-size:14px}
